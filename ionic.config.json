@@ -1,0 +1,7 @@
+{
+  "name": "CanteenCart",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
