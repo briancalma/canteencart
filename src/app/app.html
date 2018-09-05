@@ -1,1 +1,31 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="secondary">
+        <ion-title>CCart</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item>
+                Home
+            </button>
+            <button ion-item>
+                Meals
+            </button>
+            <button ion-item>
+            Your Cart
+            </button>
+            <button ion-item>
+            Options
+            </button>
+            <button ion-item>
+            Account
+            </button>
+            <button ion-item>
+            Logout
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+      
+<ion-nav #content [root]="rootPage"></ion-nav>
