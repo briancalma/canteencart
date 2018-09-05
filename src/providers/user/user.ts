@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IUser } from '../../interface/user';
 
 
 const httpOptions = {
@@ -15,8 +16,13 @@ export class UserProvider {
 
   public url:string = "http://dev.ccart.test/api/user";
 
-  constructor(public http: HttpClient) {
-    
+  public user: IUser = {
+    username: "",
+    password: "",
+    isLoggedIn: false
+  };
+
+  constructor(public http: HttpClient) {  
   }
 
 
@@ -32,9 +38,7 @@ export class UserProvider {
                   password : credentials.password
                };
 
-    this.http.post( this.url + "/login", body, httpOptions).subscribe((data) => {
-      console.log(data);
-    });
+    return this.http.post( this.url + "/login", body, httpOptions);
   }
 
   signup( credentials  ) {
