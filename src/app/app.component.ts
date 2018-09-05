@@ -12,7 +12,7 @@ import { SignupPage } from '../pages/signup/signup';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

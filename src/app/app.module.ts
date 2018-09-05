@@ -8,8 +8,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+
+
 import { UserProvider } from '../providers/user/user';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuProvider } from '../providers/menu/menu';
+import { MealInformationPage } from '../pages/meal-information/meal-information';
 
 
 @NgModule({
@@ -17,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    MealInformationPage
   ],
   imports: [
     BrowserModule,
@@ -29,13 +34,15 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    MealInformationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    MenuProvider
   ]
 })
 export class AppModule {}
