@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-
+import { UserProvider } from '../../providers/user/user';
 
 @Component({
   selector: 'page-signup',
@@ -22,11 +21,11 @@ export class SignupPage {
   // Our translated text strings
   private signupErrorString: string;
 
-  constructor(public navCtrl: NavController,) {
+  constructor(public navCtrl: NavController, public userProvider: UserProvider) {
   }
 
   doSignup() {
-    
+    this.userProvider.signup(this.account);
   }
 
   goToLogin() {

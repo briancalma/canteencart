@@ -3,24 +3,24 @@
     <ion-title>Sign Up</ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content>
   <form (submit)="doSignup()">
     <ion-list>
 
       <ion-item>
         <ion-label fixed>Firstname</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.fname" name="fname"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Lastname</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.lname" name="lname"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Phone Number</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.phone_number" name="phone_number"></ion-input>
       </ion-item>
 
       <ion-item>

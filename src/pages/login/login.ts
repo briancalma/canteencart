@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
+import { UserProvider } from '../../providers/user/user';
 
 @Component({
   selector: 'page-login',
@@ -18,12 +19,13 @@ export class LoginPage {
   // Our translated text strings
   private loginErrorString: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public userProvider: UserProvider) {
+    // userProvider.getAllUsers();
   }
 
   // Attempt to login in through our User service
   doLogin() {
-    
+    this.userProvider.login( this.account );
   }
 
   goToSignUp() {
