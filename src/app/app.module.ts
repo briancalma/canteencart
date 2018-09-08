@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { QRCodeModule } from 'angularx-qrcode';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,6 +15,7 @@ import { UserProvider } from '../providers/user/user';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuProvider } from '../providers/menu/menu';
 import { MealInformationPage } from '../pages/meal-information/meal-information';
+import { PaymentPage } from '../pages/payment/payment';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { MealInformationPage } from '../pages/meal-information/meal-information'
     HomePage,
     LoginPage,
     SignupPage,
-    MealInformationPage
+    MealInformationPage,
+    PaymentPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule, 
+    QRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +39,8 @@ import { MealInformationPage } from '../pages/meal-information/meal-information'
     HomePage,
     LoginPage,
     SignupPage,
-    MealInformationPage
+    MealInformationPage,
+    PaymentPage
   ],
   providers: [
     StatusBar,

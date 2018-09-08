@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Buy Section</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-title item-start> Meal :  {{ paymentData.name }}</ion-card-title>
+    <ion-card-content>
+      <br>
+      <qrcode [qrdata]="qrId" [size]="256" [level]="'M'"></qrcode>
+      
+      <p>{{ qrId }}</p>
+     
+      <h1>Quantity:  {{ paymentData.quantity }}</h1>
+      <h1>Price: ₱ {{ paymentData.price | number: '.2'}}</h1>
+      <br>
+      <hr><br>
+      <h1 color="danger">Total: ₱ {{ paymentData.quantity * paymentData.price | number: '.2'}} </h1>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

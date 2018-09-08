@@ -8,7 +8,7 @@
 
 
 <ion-content>
-  <form (submit)="doLogin()">
+  <form> 
     <ion-list>
       <ion-item>
         <ion-label floating>USERNAME</ion-label>
@@ -23,7 +23,7 @@
       <ion-item>
         <ion-grid>
           <ion-row>
-            <ion-col col-6><button ion-button color="primary" block large>LOGIN</button></ion-col>
+            <ion-col col-6><button ion-button color="primary" block large (click)="doLogin()">LOGIN</button></ion-col>
             <ion-col col-6>
               <button ion-button clear (click)="goToSignUp()"> Don't Have an Account? </button>
             </ion-col>

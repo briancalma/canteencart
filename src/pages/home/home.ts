@@ -4,6 +4,7 @@ import { MenuProvider } from '../../providers/menu/menu';
 import { MealInformationPage } from '../meal-information/meal-information';
 import { UserProvider } from '../../providers/user/user';
 import { LoginPage } from '../login/login';
+import { IApiResponse } from '../../interface/apiresponse';
 
 @Component({
   selector: 'page-home',
@@ -16,8 +17,8 @@ export class HomePage {
                private modalCtrl: ModalController,
                public userProvider: UserProvider
              ) {
-
-  }
+                  
+               }
 
   openMealInfoModal( meal ) { 
 
@@ -31,6 +32,11 @@ export class HomePage {
       this.navCtrl.push(LoginPage);
     }
     
+  }
+
+
+  getAllMeals() {
+         
   }
 
 

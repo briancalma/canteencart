@@ -46,13 +46,12 @@ export class UserProvider {
         firstname : credentials.fname,
         lastname : credentials.lname,
         phone_number : credentials.phone_number,
+        email: credentials.email,
         username : credentials.username,
         password : credentials.password
     };
 
-    this.http.post( this.url , body, httpOptions).subscribe((data) => {
-      console.log(data);
-    });
+    return this.http.post( this.url , body, httpOptions);
   }
 
 }

@@ -21,21 +21,23 @@ export class LoginPage {
   // Our translated text strings
   private loginErrorString: string;
 
-  constructor(public navCtrl: NavController, public userProvider: UserProvider) {
+  constructor(public navCtrl: NavController, public userProvider: UserProvider, public toastCtrl: ToastController) {
     // userProvider.getAllUsers();
   }
 
   // Attempt to login in through our User service
   doLogin() {
     this.userProvider.login( this.account )
-    .subscribe((data: IResponse) => {
+    .subscribe((data: IResponse) => { 
       
       if( data.result === "success" ) {
         this.userProvider.user.username = this.account.username;
         this.userProvider.user.isLoggedIn = true;
         this.navCtrl.setRoot(HomePage);
       } else {
-        alert(data.message);
+        // alert(data.message);
+        let toast = this.toastCtrl.create({ message: 'Username and Password Does not exist!', showCloseButton: true });
+        toast.present();
         this.account.username = "";
         this.account.password = "";
       }

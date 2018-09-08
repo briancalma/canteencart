@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { PaymentPage } from '../payment/payment';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,7 @@ export class MealInformationPage {
   }
 
   dismiss() {
-    // let data = { 'foo': 'bar' };
+    let data = { 'foo': 'bar' };
     this.viewCtrl.dismiss();
   }
 
@@ -32,6 +33,14 @@ export class MealInformationPage {
 
   addQuantity() {
     this.quantity++;
+  }
+
+  showPaymentPage() {
+    this.navCtrl.push(PaymentPage, {
+      name: this.meal.name,
+      price: this.meal.price,
+      quantity: this.quantity
+    });
   }
 
 }
