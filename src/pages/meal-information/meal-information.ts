@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PaymentPage } from '../payment/payment';
 
-@IonicPage()
 @Component({
   selector: 'page-meal-information',
   templateUrl: 'meal-information.html',

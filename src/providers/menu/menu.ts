@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { IMeal } from '../../interface/meal';
 import { IApiResponse } from '../../interface/apiresponse';
 
-const url: string = "http://dev.ccart.test/api";
+const url: string = "http://178.128.28.26/api";
 
 @Injectable()
 export class MenuProvider {
