@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { IMeal } from '../../interface/meal';
 import { IApiResponse } from '../../interface/apiresponse';
 
-const url: string = "http://178.128.28.26/api";
+const url: string = "http://dev.ccart.test/api";
 
 @Injectable()
 export class MenuProvider {
@@ -32,7 +32,7 @@ export class MenuProvider {
   }
 
   getAllMeals() {
-    let targetUrl = url + "/meals";
+    let targetUrl = url + "/products";
 
     return this.http.get(targetUrl).subscribe((res: IApiResponse) => {
       this.meals = res.data;

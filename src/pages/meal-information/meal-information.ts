@@ -37,7 +37,7 @@ export class MealInformationPage {
   showPaymentPage() {
     this.navCtrl.push(PaymentPage, {
       name: this.meal.name,
-      price: this.meal.price,
+      price: this.meal.retail_price,
       quantity: this.quantity
     });
   }

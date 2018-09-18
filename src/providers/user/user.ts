@@ -14,7 +14,9 @@ const httpOptions = {
 @Injectable()
 export class UserProvider {
 
-  public url:string = "http://178.128.28.26/api/user";
+  // public url:string = "http://178.128.28.26/api/user";
+
+  public url:string = "http://dev.ccart.test/api/user";
 
   public user: IUser = {
     username: "",

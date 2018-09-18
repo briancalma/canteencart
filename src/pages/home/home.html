@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons start>
+    <!-- <ion-buttons start>
       <button ion-button icon-only>
         <ion-icon name="cart"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
 
     <ion-title>CCart</ion-title>
 
@@ -18,11 +18,11 @@
 
 <ion-content padding>
   <ion-card *ngFor="let meal of menuProvider.meals;">
-    <img src="{{ meal.banner }}"/>
+    <img src="{{ meal.banner }}">
     <ion-card-content>
       <ion-item>
         <ion-card-title item-start> {{ meal.name }} / </ion-card-title>
-        <ion-card-title item-start color="danger">₱ {{ meal.price | number: '.2'}} </ion-card-title>
+        <ion-card-title item-start color="danger">₱ {{ meal.retail_price | number: '.2'}} </ion-card-title>
         <button item-end ion-button color="danger" outline large (click)="openMealInfoModal(meal)"> Buy Now</button>
       </ion-item>
     </ion-card-content>

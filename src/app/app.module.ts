@@ -16,7 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuProvider } from '../providers/menu/menu';
 import { MealInformationPage } from '../pages/meal-information/meal-information';
 import { PaymentPage } from '../pages/payment/payment';
-
+import { OrderSummaryPage } from '../pages/order-summary/order-summary';
+import { TabsPage } from '../pages/tabs/tabs';
+import { CartPage } from '../pages/cart/cart';
+import { TransactionPage } from '../pages/transaction/transaction';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,11 @@ import { PaymentPage } from '../pages/payment/payment';
     LoginPage,
     SignupPage,
     MealInformationPage,
-    PaymentPage
+    PaymentPage,
+    OrderSummaryPage,
+    TabsPage,
+    CartPage,
+    TransactionPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,11 @@ import { PaymentPage } from '../pages/payment/payment';
     LoginPage,
     SignupPage,
     MealInformationPage,
-    PaymentPage
+    PaymentPage,
+    OrderSummaryPage,
+    TabsPage,
+    CartPage,
+    TransactionPage
   ],
   providers: [
     StatusBar,

@@ -22,7 +22,7 @@
   <img src="{{ meal.banner }}"> <br>
   
   <ion-item>Meal: {{ meal.name }}</ion-item>
-  <ion-item>Price: {{ meal.price | number: '.2'}}</ion-item>
+  <ion-item>Price: {{ meal.retail_price | number: '.2'}}</ion-item>
   <ion-item> <p>{{ meal.decription }}</p> </ion-item>
   <ion-item> Quantity: 
     <button ion-button icon-only outline color="danger" (click)="subtractQuantity()"> <ion-icon name="remove"></ion-icon> </button> 
