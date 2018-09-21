@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, LoadingController  } from 'ionic-angular';
+import { OrderProvider } from '../../providers/order/order';
+import { UserProvider } from '../../providers/user/user';
+import { IOrder } from '../../interface/order';
+import { ITransaction } from '../../interface/transaction';
 
-/**
- * Generated class for the OrderSummaryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,14 +13,15 @@ import { IonicPage, NavController, NavParams, ViewController, LoadingController 
 })
 export class OrderSummaryPage {
 
-  public purchaseData;
+  public purchaseData:IOrder;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController, public orderCtrl: OrderProvider, public userCtrl: UserProvider) {
     this.purchaseData = navParams.get('data');
+    // console.log(this.purchaseData);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderSummaryPage');
+    // console.log('ionViewDidLoad OrderSummaryPage');
   }
 
   dismiss() {
@@ -40,6 +39,13 @@ export class OrderSummaryPage {
     });
 
     loading.present();
+
+    let orderData: ITransaction = {
+      orders: [this.purchaseData] ,
+      user_id: this.userCtrl.user.user_id
+    }; 
+
+    this.orderCtrl.sendOrderToServer(orderData); 
     
     // TODO: Send Data to the server
   }

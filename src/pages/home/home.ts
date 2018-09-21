@@ -10,14 +10,14 @@ import { IApiResponse } from '../../interface/apiresponse';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage { 
 
   constructor( public navCtrl: NavController, 
                public menuProvider: MenuProvider, 
                private modalCtrl: ModalController,
                public userProvider: UserProvider
              ) {
-                  
+                 
                }
 
   openMealInfoModal( meal ) { 

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -9,7 +10,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-
 
 import { UserProvider } from '../providers/user/user';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,9 @@ import { OrderSummaryPage } from '../pages/order-summary/order-summary';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CartPage } from '../pages/cart/cart';
 import { TransactionPage } from '../pages/transaction/transaction';
+import { OrderProvider } from '../providers/order/order';
+import { TransactionProvider } from '../providers/transaction/transaction';
+import { TransactionDetailPage } from '../pages/transaction-detail/transaction-detail';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,15 @@ import { TransactionPage } from '../pages/transaction/transaction';
     OrderSummaryPage,
     TabsPage,
     CartPage,
-    TransactionPage
+    TransactionPage,
+    TransactionDetailPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule, 
-    QRCodeModule
+    QRCodeModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,14 +56,17 @@ import { TransactionPage } from '../pages/transaction/transaction';
     OrderSummaryPage,
     TabsPage,
     CartPage,
-    TransactionPage
+    TransactionPage,
+    TransactionDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
-    MenuProvider
+    MenuProvider,
+    OrderProvider,
+    TransactionProvider
   ]
 })
 export class AppModule {}

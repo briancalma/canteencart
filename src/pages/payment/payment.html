@@ -14,11 +14,11 @@
         <p>{{ qrId }}</p> 
       -->
      
-      <h1>Quantity:  {{ paymentData.quantity }}</h1>
+      <h1>Quantity:  {{ paymentData.qty }}</h1>
       <h1 color="danger">Price: ₱ {{ paymentData.price | number: '.2'}}</h1>
       <br>
       <hr><br>
-      <h1 color="danger">Total: ₱ {{ paymentData.quantity * paymentData.price| number: '.2'}} </h1>
+      <h1 color="danger">Total: ₱ {{ paymentData.qty * paymentData.price| number: '.2'}} </h1>
       <button ion-button block large color="danger" (click)="proceedToCheckOut()">Proceed To Checkout</button>
     </ion-card-content>
   </ion-card>

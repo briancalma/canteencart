@@ -1,15 +1,17 @@
-<!--
-  Generated template for the TransactionPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>Transactions</ion-title>
+    <ion-title>Your Transactions</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  
+  <ion-list>
+    <ion-item *ngFor="let item of transCtrl.transactions">
+      <ion-icon name="cart" item-start color="secondary"></ion-icon>
+      <h1>Transact ID : {{ item.transaction_id }}</h1>
+      <h2>Total Price : ₱ {{ item.total_payment | number: '.2'}}</h2>
+      <p>Bill Date : {{ item.bill_date }}</p>
+      <button ion-button clear item-end (click)="openTransactionDetailsModal( item )">View</button>
+    </ion-item>
+  </ion-list>
 </ion-content>

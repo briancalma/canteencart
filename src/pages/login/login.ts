@@ -4,12 +4,13 @@ import { SignupPage } from '../signup/signup';
 import { UserProvider } from '../../providers/user/user';
 import { IResponse } from '../../interface/response';
 import { HomePage } from '../home/home';
+import { IProfile } from '../../interface/profile';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
-export class LoginPage {
+export class LoginPage { 
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
@@ -30,9 +31,16 @@ export class LoginPage {
     this.userProvider.login( this.account )
     .subscribe((data: IResponse) => { 
       
+      let profile:IProfile = data.user_data;
+
       if( data.result === "success" ) {
+        // Process of saving the user account
         this.userProvider.user.username = this.account.username;
         this.userProvider.user.isLoggedIn = true;
+        this.userProvider.user.user_id = profile.id;    
+        this.userProvider.saveUserAccount();
+        
+        // Navigating to the home page
         this.navCtrl.setRoot(HomePage);
       } else {
         // alert(data.message);
