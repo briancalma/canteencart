@@ -17,12 +17,12 @@
   </ion-toolbar>
 </ion-header>
 
-
+ 
 <ion-content padding>
   <img src="{{ meal.images }}"> <br>
   
   <ion-item>Meal: {{ meal.name }}</ion-item>
-  <ion-item>Price: {{ meal.retail_price | number: '.2'}}</ion-item>
+  <ion-item>Price:  ₱ {{ meal.retail_price | number: '.2'}}</ion-item>
   <ion-item> <p>{{ meal.decription }}</p> </ion-item>
   <ion-item> Quantity: 
     <button ion-button icon-only outline color="danger" (click)="subtractQuantity()"> <ion-icon name="remove"></ion-icon> </button> 
@@ -30,7 +30,7 @@
     <button ion-button icon-only outline (click)="addQuantity()"> <ion-icon name="add"></ion-icon> </button> 
   </ion-item>
   <ion-item>
-    <button ion-button large outline color="secondary"> <ion-icon name="cart"></ion-icon> Add To Cart</button> 
+    <button ion-button large outline color="secondary" (click)="addToCart()"> <ion-icon name="cart"></ion-icon> Add To Cart</button> 
     <button ion-button large color="danger" (click)="showPaymentPage()"> Buy Now </button> 
   </ion-item>
 </ion-content>

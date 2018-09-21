@@ -23,6 +23,7 @@ import { TransactionPage } from '../pages/transaction/transaction';
 import { OrderProvider } from '../providers/order/order';
 import { TransactionProvider } from '../providers/transaction/transaction';
 import { TransactionDetailPage } from '../pages/transaction-detail/transaction-detail';
+import { CartProvider } from '../providers/cart/cart';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TransactionDetailPage } from '../pages/transaction-detail/transaction-d
     UserProvider,
     MenuProvider,
     OrderProvider,
-    TransactionProvider
+    TransactionProvider,
+    CartProvider
   ]
 })
 export class AppModule {}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { CartProvider } from '../../providers/cart/cart';
+import { OrderSummaryPage } from '../order-summary/order-summary';
 
 /**
  * Generated class for the CartPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CartPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cartCtrl: CartProvider, public modalCtrl: ModalController) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
 
+
+  order() {
+    let modal = this.modalCtrl.create(OrderSummaryPage,{ data: this.cartCtrl.cartItems });
+    modal.present();
+    // console.log(this.cartCtrl.cartItems);
+    
+  }
 }

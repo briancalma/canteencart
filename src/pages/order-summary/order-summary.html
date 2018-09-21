@@ -32,18 +32,18 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row *ngFor="let item of purchaseData">
       <ion-col col-12 col-sm>
-        {{ purchaseData.name }}
+        {{ item.name }}
       </ion-col>
       <ion-col col-12 col-sm>
-        ₱ {{ purchaseData.price | number: '.2' }}
+        ₱ {{ item.price | number: '.2' }}
       </ion-col>
       <ion-col col-12 col-sm>
-        {{ purchaseData.qty }}
+        {{ item.qty }}
       </ion-col>
       <ion-col col-12 col-sm>
-        ₱ {{ purchaseData.total | number: '.2' }}
+        ₱ {{ item.price * item.qty| number: '.2' }}
       </ion-col>
     </ion-row>
 

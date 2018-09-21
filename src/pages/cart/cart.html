@@ -14,5 +14,49 @@
 
 
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row class="table-header">
+      <ion-col col-12 col-sm>
+       Product
+      </ion-col>
+      <ion-col col-12 col-sm>
+       Price
+      </ion-col>
+      <ion-col col-12 col-sm>
+       Qty
+      </ion-col>
+      <ion-col col-12 col-sm>
+       Total
+      </ion-col>
+      <ion-col col-12 col-sm>
+        Action
+       </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let item of cartCtrl.cartItems; let i = index;">
+      <ion-col col-12 col-sm>
+        {{ item.name }}
+       </ion-col>
+       <ion-col col-12 col-sm>
+        {{ item.price }}
+       </ion-col>
+       <ion-col col-12 col-sm>
+        {{ item.qty }}
+       </ion-col>
+       <ion-col col-12 col-sm>
+        ₱ {{ item.qty * item.price | number: '.2'}}
+       </ion-col>
+       <ion-col col-12 col-sm>
+         <button ion-button color="danger" icon-only (click)="cartCtrl.removeItemInCart(i)">
+            <ion-icon name="close"></ion-icon>
+         </button>
+       </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col col-12 col-sm>
+        <button ion-button block (click)="order()">Order Now</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
