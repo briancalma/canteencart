@@ -8,6 +8,12 @@
 
   <ion-navbar>
     <ion-title>Cart</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -53,10 +59,18 @@
        </ion-col>
     </ion-row>
     
-    <ion-row>
+    <ion-row *ngIf="cartCtrl.cartItems.length > 0;else nocartitem">
       <ion-col col-12 col-sm>
         <button ion-button block (click)="order()">Order Now</button>
       </ion-col>
     </ion-row>
+
+    <ng-template #nocartitem>
+      <ion-row>
+        <ion-col col-12 col-sm>
+        <h2>You did not add an item in your cart . . .</h2>
+        </ion-col>
+      </ion-row>
+    </ng-template>
   </ion-grid>
 </ion-content>

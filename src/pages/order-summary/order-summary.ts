@@ -5,6 +5,7 @@ import { UserProvider } from '../../providers/user/user';
 import { IOrder } from '../../interface/order';
 import { ITransaction } from '../../interface/transaction';
 import { CartProvider } from '../../providers/cart/cart';
+import { TabsPage } from '../tabs/tabs';
 
 
 @IonicPage()
@@ -37,7 +38,7 @@ export class OrderSummaryPage {
 
     loading.onDidDismiss(() => {
       this.navCtrl.popAll();
-      
+      // this.navCtrl.setRoot(TabsPage);
     });
 
     loading.present();
